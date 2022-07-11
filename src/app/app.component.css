@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    vertical-align: middle;
+    background-color: #eee;
+}
+
+.navbar {
+    background-color:#EC1D24;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+

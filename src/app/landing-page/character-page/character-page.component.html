@@ -1,0 +1,24 @@
+<div class="small-container single-character m-5 ml-10">
+    <div class="row">
+        <div class="col-6 image-container">
+            <img width="100%" id="ProductImg" src="{{ Character?.thumbnail?.path + '.'+ Character?.thumbnail?.extension }}">
+        </div>
+        <div  class="col-6  character-info">
+            <div >
+                <h1>{{Character?.name}}</h1>
+                <h3>Description</h3>
+                <br>
+                <p >{{ Character?.description == "" ? "This Character does not have a description": Character?.description  }}</p>
+                <h2>Comics</h2>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item" (click)="openDialog(comic.resourceURI)" *ngFor=" let comic of Character?.comics?.items">
+                    {{comic.name}}
+                </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 flex justify-content-end">
+            <button type="button" class="btn btn-info" routerLink="/landing-page">Volver</button>
+        </div>
+    </div>
+</div>

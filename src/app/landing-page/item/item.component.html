@@ -1,0 +1,17 @@
+<div class="card" (mouseenter)="hover = false" (mouseleave)="hover = true" >
+  <fa-icon [icon]="faStar" [ngClass]="{'favorite': favorite}" (click)="addFavorite()" class="icon"></fa-icon>
+  <div (click)="open()">
+  <img src="{{ Character?.thumbnail?.path + '.'+ Character?.thumbnail?.extension }}">
+  <h3>{{Character?.name}}</h3>
+  <div *ngIf="!hover">
+    <h2>Description</h2>
+    <p>{{ Character?.description == "" ? "This Character does not have a description": Character?.description  }}</p>
+    <h2>Comics</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"  *ngFor=" let comic of Character?.comics?.items?.slice(0, 4)">
+        {{comic.name}}
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>

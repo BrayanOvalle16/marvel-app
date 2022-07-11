@@ -1,0 +1,7 @@
+<div class="container">
+    <h1 class="tittle">Favorite Comics</h1>
+<ul class="list-group">
+    <li class="list-group-item" (click)="openDialog(comic.resourceURI)"  *ngFor="let comic of data">{{comic.title}}</li>
+</ul>
+<button type="button p-2" routerLink="/landing-page" class="btn btn-info">Volver</button>
+</div>

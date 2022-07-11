@@ -1,0 +1,22 @@
+
+<div class="small-container single-character m-5 ml-10">
+    <div class="row">
+        <div class="col-6 image-container">
+            <img width="100%" id="ProductImg" src="{{ comic?.thumbnail?.path + '.'+ comic?.thumbnail?.extension }}">
+        </div>
+        <div  class="col-6  character-info">
+            <div >
+                <h1>{{comic?.title}}</h1>
+                <h3>Description</h3>
+                <br>
+                <p >{{ comic?.description == "" ? "This Comic does not have a description": comic?.description  }}</p>
+                <button mat-button *ngIf="!isFavorite" class="btn btn-warning form-control" (click)="addFavorite()">Add To Favorites</button>
+                <button mat-button *ngIf="isFavorite" class="btn btn-danger form-control" (click)="deleteFavorite()">Delete From Favorites</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<mat-dialog-actions align="end">
+    <button mat-button  class="btn btn-info" mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

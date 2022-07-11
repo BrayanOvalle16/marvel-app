@@ -1,0 +1,55 @@
+<div class="wrapper" *ngIf="modal">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="p-2">
+        <div class="sidebar-header">
+            <h3>Filter</h3>
+        </div>
+        <div class="form-group"> <!-- Date input -->
+            <label class="control-label" for="name">Search by name</label>
+            <input class="form-control" (change)="paginator(-paginatorOffset)" [(ngModel)]="characterName"  id="name" name="name" placeholder="Name..." type="Text"/>
+        </div>
+        <div class="form-group"> <!-- Date input -->
+            <label class="control-label" for="date">Creation Date</label>
+            <input class="form-control "  id="date" name="date" (change)="paginator(-paginatorOffset)" [(ngModel)]="creationTime" placeholder="MM/DD/YYY" type="date"/>
+        </div>
+        <div class="form-group"> <!-- Date input -->
+            <label class="control-label" for="favorites">Favorites</label>
+            <br>
+            <input class="" (change)="paginator(-paginatorOffset)" [(ngModel)]="favorites"  id="favorites" name="favorites"  type="checkbox"/>
+            <label>    Show only my favorites</label>
+        </div>
+        <div class="form-group"> <!-- Date input -->
+            <label class="control-label" for="comics">Show Favorite Comics</label>
+            <br>
+            <button class="btn btn-primary form-control" routerLink="/landing-page/comics" id="comics" name="comics" >Show Favorite Comics</button>
+        </div>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container mt-3">
+            <h1 class="tittle">Marvel Characters</h1>
+            <div class="row">
+            <div class="p-3 col-md-6 col-sm-12 col-lg-6" *ngFor="let Character of listCharacters" (click)="Charactersa = Character">
+                <app-item [Character]="Character"></app-item>
+            </div>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item" [ngClass]="{'disabled': paginatorOffset==0}">
+                    <a class="page-link" (click)="paginator(-1)">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link">{{paginatorOffset + 1}}</a></li>
+                  <li class="page-item"><a class="page-link" (click)="paginator(1)">{{paginatorOffset + 2}}</a></li>
+                  <li class="page-item"><a class="page-link" (click)="paginator(2)">{{paginatorOffset + 3}}</a></li>
+                  <li class="page-item">
+                    <a class="page-link" (click)="paginator(1)">Next</a>
+                  </li>
+                </ul>
+              </nav>
+        </div>        
+    </div>
+</div>
+
+<i class="fas fa-hand-spock"></i>
+

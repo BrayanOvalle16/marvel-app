@@ -1,0 +1,39 @@
+.small-container {
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.single-character{
+    margin-top: 80px;
+}
+
+.image-container {
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    padding: 150px 0;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 90px;
+    margin: 25px 0;
+}
+
+h4 {
+    margin: 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.character-info {
+    display: flex;
+    align-items: center;
+}
+
